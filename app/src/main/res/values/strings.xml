@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">WiproExercise</string>
+    <string name="app_name">Feeds</string>
+
+    <!--    General message-->
+    <string name="no_internet">The network connection is lost</string>
+    <string name="something_went_wrong">Something went wrong please try again</string>
+    <string name="title_activity_authenticate">AuthenticateActivity</string>
+
 </resources>
