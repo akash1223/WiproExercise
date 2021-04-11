@@ -2,4 +2,4 @@
 
 | Feed UI 1     | Feed UI   |
 |------------|-------------|
-| ![](../develop/screenshot/ScreenshotFeeds1.jpg) | ![](../develop/screenshot/ScreenshotFeeds2.jpg) |
+| ![Branch-> feed-screen](../develop/screenshot/ScreenshotFeeds1.jpg) | ![Branch -> feed-screen-ui-changes](../develop/screenshot/ScreenshotFeeds2.jpg) |
