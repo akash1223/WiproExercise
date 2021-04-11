@@ -12,21 +12,22 @@ import kotlinx.coroutines.launch
 class FeedViewModel(private val feedsRepository: FeedsRepository) : ViewModel() {
 
 
-    private var _mFeedData = MutableLiveData<Resource<FeedsResponse>>()
-    val mFeedData: LiveData<Resource<FeedsResponse>>
-        get() = _mFeedData
+    private var mFeedData = MutableLiveData<Resource<FeedsResponse>>()
 
 
     init {
         fetchFeedsData()
     }
     fun fetchFeedsData() {
-        _mFeedData.value = (Resource.loading(null))
+        mFeedData.value = (Resource.loading(null))
         viewModelScope.launch {
 
             val response =feedsRepository.executeFeed()
-            _mFeedData.postValue(response)
+            mFeedData.postValue(response)
         }
+    }
+    fun getFeeds(): LiveData<Resource<FeedsResponse>> {
+        return mFeedData
     }
 
 

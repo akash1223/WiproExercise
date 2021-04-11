@@ -7,7 +7,7 @@ import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import com.appcretor.wiproexercise.R
 
-
+@lombok.Generated
 class CustomProgressBar(context: Context) : Dialog(context) {
 
     init {

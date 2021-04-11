@@ -45,7 +45,7 @@ class FeedFragment : BaseFragment() {
 
         feedListSetup()
 
-        mViewModel.mFeedData.observe(viewLifecycleOwner, Observer {response->
+        mViewModel.getFeeds().observe(viewLifecycleOwner, Observer {response->
             if (mBinding.swipeRefresh.isRefreshing) {
                 if (response.status != Resource.Status.LOADING)
                     mBinding.swipeRefresh.isRefreshing = false
