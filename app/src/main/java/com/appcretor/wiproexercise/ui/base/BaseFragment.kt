@@ -7,9 +7,11 @@ import android.os.Bundle
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.*
+import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import com.appcretor.wiproexercise.R
 import com.appcretor.wiproexercise.utils.CustomProgressBar
 import com.google.android.material.snackbar.Snackbar
 
@@ -25,23 +27,6 @@ abstract class BaseFragment : Fragment() {
         mNavController = Navigation.findNavController(view)
     }
 
-    protected fun hideKeyboard() {
-        val view = requireActivity().currentFocus
-        if (view != null) {
-            val inputManager =
-                requireActivity().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-            inputManager.hideSoftInputFromWindow(view.windowToken, 0)
-        }
-    }
-
-    protected fun showToast(msg: String, isLengthLong: Boolean = false) {
-        if (isLengthLong) {
-            Toast.makeText(requireActivity(), msg, Toast.LENGTH_LONG).show()
-            return
-        }
-        Toast.makeText(requireActivity(), msg, Toast.LENGTH_SHORT).show()
-    }
-
     protected fun showSnackBar(view: View, message: String, isLengthLong: Boolean = false) {
         if (isLengthLong) {
             Snackbar.make(view, message, Snackbar.LENGTH_LONG)
@@ -50,6 +35,20 @@ abstract class BaseFragment : Fragment() {
         }
         Snackbar.make(view, message, Snackbar.LENGTH_SHORT)
             .show()
+    }
+    fun showAlertDialogWithOK(
+        title: String,
+        message: String,
+        okBtnCallback: (() -> Unit)?
+    ) {
+        val alertDialog = AlertDialog.Builder(requireActivity())
+        alertDialog.setTitle(title)
+        alertDialog.setMessage(message)
+        alertDialog.setCancelable(false)
+        alertDialog.setPositiveButton(getString(R.string.ok)) { _, _ ->
+            okBtnCallback?.invoke()
+        }
+        alertDialog.show()
     }
 
     protected fun showLoading() {

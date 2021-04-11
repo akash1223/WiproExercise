@@ -5,5 +5,7 @@
     <string name="no_internet">The network connection is lost</string>
     <string name="something_went_wrong">Something went wrong please try again</string>
     <string name="title_activity_authenticate">AuthenticateActivity</string>
-
+    <string name="feed_screen">Feed</string>
+   <string name="ok">OK</string>
+    <string name="error">Error</string>
 </resources>

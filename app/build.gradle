@@ -27,10 +27,10 @@ android {
         }
         debug {
             testCoverageEnabled true
-            buildConfigField "String", "BASE_URL", '"https://demo.welysn.com/v1/api/"'
+            buildConfigField "String", "BASE_URL", '"https://dl.dropboxusercontent.com/s/2iodh4vg0eortkl/"'
         }
         staging {
-            buildConfigField "String", "BASE_URL", '"https://staging.welysn.com/v1/api/"'
+            buildConfigField "String", "BASE_URL", '"https://dl.dropboxusercontent.com/s/2iodh4vg0eortkl/"'
         }
     }
     testOptions {
