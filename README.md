@@ -19,6 +19,7 @@
 - Architecture Components (LiveData, ViewModel,Navigation)
 - DataBinding
 - Coroutine for Network call
+- Unit test demonstration using JUnit and Mockito
 - Listadapter for List
 
   ## dependencies
@@ -26,4 +27,26 @@
 - [Retrofit2 & Gson] for constructing the REST API
 - [Glide] for loading images
 - [Mockito] for Junit mock test
+
+
+# How to build ?
+
+Open terminal and type the below command to generate debug build <br/>
+
+``` ./gradlew assembleDebug ```
+
+Open terminal and type the below command to generate release build <br/>
+
+``` ./gradlew assembleRelease ```
+
+# How to generate code coverage report ?
+
+Open terminal and type the following command
+
+```./gradlew clean jacocoTestReport```
+
+The coverage report will be generated on the following path.
+
+``` app/build/reports ```
+
 
