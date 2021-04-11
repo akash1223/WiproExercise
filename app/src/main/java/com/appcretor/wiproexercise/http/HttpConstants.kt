@@ -6,5 +6,5 @@ object HttpConstants {
     const val STATUS_CODE_500: Int = 500
     const val EMPTY_VALUE = ""
 
-    const val METHOD_GET_FEED = "/facts.json"
+    const val METHOD_GET_FEED = "facts.json"
 }

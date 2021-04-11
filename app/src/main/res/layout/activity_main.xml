@@ -11,6 +11,8 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:background="@color/colorPrimary"
+        app:titleTextColor="@color/white"
+        app:title="@string/app_name"
         android:layout_height="wrap_content"/>
 
     <fragment

@@ -20,12 +20,12 @@ class FeedViewModel(private val feedsRepository: FeedsRepository) : ViewModel() 
     init {
         fetchFeedsData()
     }
-    private fun fetchFeedsData() {
+    fun fetchFeedsData() {
         _mFeedData.value = (Resource.loading(null))
         viewModelScope.launch {
-            _mFeedData.postValue(
-                feedsRepository.executeFeed()
-            )
+
+            val response =feedsRepository.executeFeed()
+            _mFeedData.postValue(response)
         }
     }
 

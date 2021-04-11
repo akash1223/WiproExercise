@@ -23,7 +23,7 @@
         android:layout_marginEnd="@dimen/dp4"
         android:layout_marginBottom="@dimen/dp6"
         android:padding="@dimen/dp8"
-        android:visibility="@{item.title ==null &amp;&amp; item.description ==null &amp;&amp; item.imageHref ==null ? View.VISIBLE:View.GONE }"
+        android:visibility="@{item.title ==null &amp;&amp; item.description ==null &amp;&amp; item.imageHref ==null ? View.GONE:View.VISIBLE}"
         app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="@dimen/dp10"
         app:cardUseCompatPadding="true"
@@ -31,7 +31,8 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:padding="@dimen/dp16"
+            android:padding="@dimen/dp8"
+            android:visibility="@{item.title ==null &amp;&amp; item.description ==null &amp;&amp; item.imageHref ==null ? View.GONE:View.VISIBLE}"
             android:layout_height="match_parent">
 
 
@@ -44,7 +45,7 @@
                 android:visibility="@{item.title !=null ? View.VISIBLE:View.GONE }"
                 app:layout_constraintTop_toTopOf="parent"
                 android:text="@{item.title}"
-                tools:text="Public Shame" />
+                />
 
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -56,10 +57,10 @@
                 android:visibility="@{item.description !=null ? View.VISIBLE:View.GONE }"
                 android:layout_height="wrap_content"
                 android:text="@{item.description}"
+                android:layout_marginRight="@dimen/dp5"
                 android:textColor="@color/darkFontColor"
                 android:textSize="@dimen/sp14"
                 tools:visibility="visible"
-                tools:text="It is a well known fact that polar bears are the main mode of transportation in Canada. They consume far less gas and have the added benefit of being difficult to steal."
                 />
             <ImageView
                 android:id="@+id/img_feed"
@@ -69,9 +70,9 @@
                 android:visibility="@{item.imageHref !=null ? View.VISIBLE:View.GONE }"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txt_title"
-                app:layout_constraintWidth_percent="@{item.title !=null ? 0.35 :1 }"
+                app:layoutPercentWidth="@{item.description !=null ? 0.35f : 1f}"
                 app:layout_constraintStart_toEndOf="@+id/txt_description"
-                android:src="@drawable/the_golden_compass_still"
+                app:loadImage="@{item.imageHref}"
                 tools:visibility="visible"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,5 +6,5 @@ import retrofit2.http.GET
 
 interface IHTTPService {
     @GET(HttpConstants.METHOD_GET_FEED)
-    suspend fun callGetUserProfile(): Response<FeedsResponse>
+    suspend fun callFeeds(): Response<FeedsResponse>
 }
