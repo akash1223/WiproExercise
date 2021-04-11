@@ -16,7 +16,7 @@
 ## Specs & Open-source libraries
 - Minimum SDK 25
 - MVVM Architecture
-- Architecture Components (LiveData, ViewModel)
+- Architecture Components (LiveData, ViewModel,Navigation)
 - DataBinding
 - Coroutine for Network call
 - Listadapter for List
