@@ -170,8 +170,8 @@ task jacocoTestReport(type: JacocoReport, dependsOn: ['testDebugUnitTest', 'crea
             '**/*Module*.*',
             '**/*Base*.*',
             '**/*Item*.*',
-            'com/lysn/clinician/utility/extensions/**',
-            'com/lysn/clinician/utility/**',
+            'com/appcretor/wiproexercise/di/**',
+            'com/appcretor/wiproexercise/di/**',
             'com/lysn/clinician/ui/base/**'
 
     ]
