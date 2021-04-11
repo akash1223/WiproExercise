@@ -54,7 +54,6 @@
                 app:layout_constraintTop_toBottomOf="@+id/txt_title"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/img_feed"
-                android:visibility="@{item.description !=null ? View.VISIBLE:View.GONE }"
                 android:layout_height="wrap_content"
                 android:text="@{item.description}"
                 android:layout_marginRight="@dimen/dp5"
@@ -67,11 +66,11 @@
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 app:layout_constraintDimensionRatio="3:2"
-                android:visibility="@{item.imageHref !=null ? View.VISIBLE:View.GONE }"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txt_title"
-                app:layoutPercentWidth="@{item.description !=null ? 0.35f : 1f}"
+                app:layout_constraintWidth_percent="0.35"
                 app:layout_constraintStart_toEndOf="@+id/txt_description"
+                android:src="@drawable/icon_thumbnail"
                 app:loadImage="@{item.imageHref}"
                 tools:visibility="visible"/>
 

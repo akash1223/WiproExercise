@@ -5,6 +5,7 @@ import android.view.View
 import android.widget.ImageView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.databinding.BindingAdapter
+import com.appcretor.wiproexercise.R
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.request.RequestListener
@@ -30,36 +31,11 @@ class BindingAdapters {
         @JvmStatic
         fun loadImage(view: ImageView, imageUrl: String?) {
 
-
-
             if(!imageUrl.isNullOrEmpty()) {
                 Glide.with(view.context)
                     .load(imageUrl).apply(RequestOptions()).fitCenter()
-                    .listener(object: RequestListener<Drawable>{
-                        override fun onLoadFailed(
-                            e: GlideException?,
-                            model: Any?,
-                            target: Target<Drawable>?,
-                            isFirstResource: Boolean
-                        ): Boolean {
-                            Timber.e("BindingAdapters:Image Load Failed")
-                            view.visibility = View.GONE
-                            return false
-                        }
-
-                        override fun onResourceReady(
-                            resource: Drawable?,
-                            model: Any?,
-                            target: Target<Drawable>?,
-                            dataSource: com.bumptech.glide.load.DataSource?,
-                            isFirstResource: Boolean
-                        ): Boolean {
-                           Timber.d("BindingAdapters: Image Loaded")
-
-                            return false
-                        }
-
-                    }).thumbnail()
+                    .placeholder(R.drawable.icon_thumbnail)
+                    .error(R.drawable.icon_thumbnail)
                     .into(view)
             }
         }
